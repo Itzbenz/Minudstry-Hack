@@ -1,0 +1,1 @@
+./gradlew server:dist -Pbuildversion=104.10
