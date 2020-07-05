@@ -6,7 +6,9 @@
 \
 **I don't know who are you or what you want**\
 \
-**The fact say: this is 10% hacking and griefing and 90% drama**
+**The fact say: this is 10% hacking and griefing and 90% drama**\
+\
+**Everything you see is maybe real or fake or none at all**
 
 **Feature**
 -
