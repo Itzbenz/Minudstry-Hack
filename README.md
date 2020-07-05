@@ -9,7 +9,8 @@
 -Auto change name\
 -Change discord rich presence to nonsense word\
 -In-game code editor (Require JDK 1.8, i doubt it can run in android)\
-
+-Auto spam
+-Sorter, MassDriver, PowerNode, ItemSource Shuffler
 
 **Bot Command List**
 -
