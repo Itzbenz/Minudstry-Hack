@@ -1,6 +1,12 @@
 **Mindustry o7 Hack Client**
 
-
+**DISCLAIMER**\
+\
+**We don't force you to believe this information, this information maybe has been altered**\
+\
+**I don't know who are you or what you want**\
+\
+**But the fact say this is 10% hacking and griefing and 90% drama**
 
 **Feature**
 -
@@ -47,7 +53,9 @@ and many more
 Code Editor
 ![Hint](Hint/Hint3.PNG)\
 Stupid Color
-![Hint](Hint/Hint2.PNG)
+![Hint](Hint/Hint2.PNG)\
+In-Game GUI\
+![Hint](Hint/Hint4.PNG)
 
 **Code Based On**
 -
@@ -71,12 +79,12 @@ Server Output server/build/libs/server-release.jar\
 **NOTE**: Android need android sdk in order to compile\
 \
 List of .bat and .sh\
-[BuildAndroidWindows](BuildAndroid.bat) \
-[BuildAndroidLinux]BuildAndroid.sh\
-BuildDesktop.bat\
-BuildDesktop.sh\
-BuildServer.bat\
-BuildServer.sh\
+[BuildAndroidWindows](./BuildAndroid.bat) \
+[BuildAndroidLinux](./BuildAndroid.sh) \
+[BuildDesktopWindows](./BuildDesktop.bat) \
+[BuildDesktopLinux](./BuildDesktop.sh) \
+[BuildServerWindows](./BuildServer.bat) \
+[BuildServerLinux](./BuildServer.sh) 
 
 **Special Thanks To**
 -
@@ -93,6 +101,8 @@ Thanks for the Anti-Griefer Code
 
 **Member of o7**\
 Thanks for the support and intelligent resource
+
+
 
 **FAQ**
 -
