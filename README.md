@@ -76,9 +76,12 @@ Thanks for the support and intelligent resource
 Q:Can't compile android\
 A:Try another arc version or download the arc to same folder as the project\
 \
-Q: Is the spyware real ?\
+Q:Is the spyware real ?\
 A: Yes, so before client release first we make bait client for spies and leaker then release the real one,
    but then the leaker decided to release the spyware  to public without think twice so technically we don't distribute the spyware\
+\
+Q:Is this spyware free?\
+A:Depend on what you believe\
 \
 Q:How good the code ?\
 A:Good enough to burn your eyes and brain\
