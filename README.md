@@ -73,6 +73,9 @@ Thanks for the support and intelligent resource
 
 **FAQ**
 -
+Q:Is this real ?\
+A:this is just fantasy, ok seriously depend on what you believe
+\
 Q:Can't compile android\
 A:Try another arc version or download the arc to same folder as the project\
 \
