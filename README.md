@@ -58,7 +58,7 @@ and some lazy man drunk code
 **Special Thanks To**
 -
 **Provet**\
-Thanks for the Atomic library\
+Thanks for the Atomic library
 
 **Nexity** \
 Thanks for the griefing tools and idea \
@@ -73,6 +73,9 @@ Thanks for the support and intelligent resource
 
 **FAQ**
 -
+Q:Can't compile android\
+A:Try another arc version or download the arc to same folder as the project\
+\
 Q: Is the spyware real ?\
 A: Yes, so before client release first we make bait client for spies and leaker then release the real one,
    but then the leaker decided to release the spyware  to public without think twice so technically we don't distribute the spyware\
