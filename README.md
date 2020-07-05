@@ -66,7 +66,16 @@ Server = make a headless server .jar (I doubt it work)\
 \
 Desktop Output = desktop/build/libs/mindustry.jar\
 Android Output = android/build/outputs/apk\
-Server Output server/build/libs/server-release.jar
+Server Output server/build/libs/server-release.jar\
+**NOTE**: Android need android sdk in order to compile\
+\
+List of .bat and .sh\
+[BuildAndroidWindows](BuildAndroid.bat) \
+[BuildAndroidLinux]BuildAndroid.sh\
+BuildDesktop.bat\
+BuildDesktop.sh\
+BuildServer.bat\
+BuildServer.sh\
 
 **Special Thanks To**
 -
