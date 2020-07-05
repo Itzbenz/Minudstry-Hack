@@ -55,6 +55,19 @@ Nexity Griefer Tools (Private)\
 Provet Atomic Library (Semi-Private)\
 and some lazy man drunk code
 
+**How To Compile**
+-
+.bat for windows\
+.sh for linux or smth\
+\
+Desktop = make a .jar\
+Android = make a .apk (if it compile properly)\
+Server = make a headless server .jar (I doubt it work)\
+\
+Desktop Output = desktop/build/libs/mindustry.jar\
+Android Output = android/build/outputs/apk\
+Server Output server/build/libs/server-release.jar
+
 **Special Thanks To**
 -
 **Provet**\
