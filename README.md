@@ -113,6 +113,9 @@ A:yeah I guess
 Q:Why you release the code?\
 A:I'm promised someone to release the code
 \
+Q:Why you make this client?\
+A:Once I wonder in mindustry, how that guy can bypass votekick and ban\
+why he can do that, if he can do that I can do that too
 \
 \
 \
