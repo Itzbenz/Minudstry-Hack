@@ -10,8 +10,18 @@
 \
 **Everything you see is maybe real or fake or none at all**
 
+**Recommended Specification**
+-
+Quad core or more (for the bot especially)
+
+
 **Feature**
 -
+\
+\
+The prefix is           **/**\
+\
+\
 -Auto change uuid\
 -Separated directory from mindustry (it won't conflict with mindustry)\
 -Auto change name\
@@ -22,6 +32,9 @@
 
 **Bot Command List**
 -
+\
+Debug Console Only\
+\
 -F8 to open console\
 -Automatically join server\
 -Use your brain so this bot is actually useful\
