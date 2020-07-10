@@ -54,7 +54,7 @@ public class DesktopLauncher extends ClientLauncher{
 
     public DesktopLauncher(String[] args){
         Version.init();
-        boolean useSteam = true;
+        boolean useSteam = false;
         testMobile = JarArgs.contains("-testMobile");
 
         if(useDiscord){
