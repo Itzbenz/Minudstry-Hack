@@ -34,7 +34,7 @@ public class Reporter{
     }
 
     public void sendHelp(String help){
-        httpPost(Manifest.crashReportURL, help);
+        return;
     }
 
     public void httpPost(String url, String content){
