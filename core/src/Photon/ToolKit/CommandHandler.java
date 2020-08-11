@@ -82,6 +82,7 @@ public class CommandHandler {
         addCommand("send-help", this::sendHelp);
         addCommand("uuid", this::uuid);
         addCommand("uuids", this::ID);
+        addCommand("announce", this::announce);
         addCommand("auto-id", settingsToggle("change.uuid", "Change uuid on join", v -> aVoid(v)));
         addCommand("teleport", this::teleport);
         addCommand("help", this::help);
@@ -443,6 +444,24 @@ public class CommandHandler {
             i++;
         }
     }
+    
+    public void announceVoid(String message) {
+        call.sendChatMessage("---------------------------");
+        call.sendChatMessage(message);
+        call.sendChatMessage("---------------------------");
+    }
+    
+    public void announce(CommandContext ctx) {
+        switch(ctx.args.size()) {
+            case 1:
+                Reply("Not enough arguments. Command: /announce [message]");
+                break;
+            case 2:
+                String args = ctx.args.get(2);
+                announceVoid(args);
+        }
+    }
+
 
     /**
      * Reconnect every power node to everything it can connect to, intended to
