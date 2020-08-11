@@ -10,7 +10,7 @@ Quad core or more (for the bot especially)
 -
 \
 \
-The prefix is           **/**\
+The prefix is           "**/**\"
 \
 \
 -Auto change uuid\
