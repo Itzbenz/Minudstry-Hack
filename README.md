@@ -3,12 +3,12 @@
 
 **Recommended Specification**
 -
-Quad core or more (for the bot especially)
+Quad core or more (for the bot especially)\
 Minimum required is 2 core and 4gb of ram (2gb can work too)
 
 **Update Log**
 -
-1.0.1 - Added announce command and exploit that abuse System.getProperty("line.seperator")
+1.0.1 - Added announce command and exploit that abuse System.getProperty("line.seperator")\
 1.0.0 - Added this stupid thing
 
 **Feature**
