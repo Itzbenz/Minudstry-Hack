@@ -446,9 +446,7 @@ public class CommandHandler {
     }
     
     public void announceVoid(String message) {
-        call.sendChatMessage("---------------------------");
-        call.sendChatMessage(message);
-        call.sendChatMessage("---------------------------");
+        call.sendChatMessage(System.getProperty("line.seperator") + "---------------------------" + System.getProperty("line.seperator") + message + System.getProperty("line.seperator") + "---------------------------");
     }
     
     public void announce(CommandContext ctx) {
