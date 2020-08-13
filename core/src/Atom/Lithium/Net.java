@@ -35,27 +35,7 @@ public class Net extends Lithium {
         String pjson = ClientBuilder.newClient().target(url).request().accept(MediaType.APPLICATION_JSON).get(String.class);
         JSONObject json = new JSONObject(new JSONTokener(pjson));
         if (json.has("status")) {
-            IP = getIp();
-            Continent = json.getString("continent");
-            ContinentCode = json.getString("continentCode");
-            Country = json.getString("country");
-            CountryCode = json.getString("countryCode");
-            Region = json.getString("region");
-            RegionName = json.getString("regionName");
-            City = json.getString("city");
-            District = json.getString("district");
-            Zip = json.getString("zip");
-            Latidude = json.getInt("lat");
-            Longtidude = json.getInt("lon");
-            TimeZone = json.getString("timezone");
-            Currency = json.getString("currency");
-            ISP = json.getString("isp");
-            ORG = json.getString("org");
-            AS = json.getString("as");
-            ASName = json.getString("asname");
-            deviceMobile = json.getBoolean("mobile");
-            proxy = json.getBoolean("proxy");
-            hosting = json.getBoolean("hosting");
+            
         }
         return IP;
     }
