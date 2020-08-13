@@ -270,6 +270,7 @@ task scaleImages(){
     }
 }
 
+// todo: image loader through o7 client
 task tileImages(){
     doLast{
         for(def img : project.getProperty("images").split(",")){
