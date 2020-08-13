@@ -42,8 +42,9 @@ public class Manipulator {
                 resultId = bytes;
                 b.putInt(Version.build);
                 TypeIO.writeString(b, c.versionType);
-                b.putShort((short)bytes1.length);
-                b.put(bytes1);
+                TypeIO.writeString(b, Vars.player.name);
+                //b.putShort((short)bytes1.length);
+                //b.put(bytes1);
                 //TypeIO.writeString(b, "\n\n\n\n\n\n\n\n\n\n\n\n" + Vars.player.name);
                 TypeIO.writeString(b, getBas64());
                 b.put((byte) 1  );
