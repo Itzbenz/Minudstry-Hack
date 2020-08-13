@@ -75,6 +75,7 @@ public class CommandHandler {
 
         // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         addCommand("code", this::code);
+        // todo: add login system https
         addCommand("msg-write", this::writeToAllMessageBlock);
         addCommand("crash", this::crash);
         addCommand("drain", this::drain);
