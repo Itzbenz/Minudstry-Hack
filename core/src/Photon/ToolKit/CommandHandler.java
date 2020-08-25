@@ -83,6 +83,7 @@ public class CommandHandler {
         addCommand("send-help", this::sendHelp);
         addCommand("uuid", this::uuid);
         addCommand("uuids", this::ID);
+        addCommand("kickbypass", this::KickBypass);
         addCommand("announce", this::announce);
         addCommand("auto-id", settingsToggle("change.uuid", "Change uuid on join", v -> aVoid(v)));
         addCommand("teleport", this::teleport);
@@ -448,6 +449,37 @@ public class CommandHandler {
     
     public void announceVoid(String message) {
         call.sendChatMessage(System.getProperty("line.seperator") + "---------------------------" + System.getProperty("line.seperator") + message + System.getProperty("line.seperator") + "---------------------------");
+    }
+    
+    private void BypassVoid() {
+        while (true) {
+            switch(didbypass) {
+                case true:
+                   for (Player target : playerGroup.all()) {
+						Call.sendChatMessage("/votekick " + target.name);
+						try {
+							Thread.sleep(200);
+						} catch (Throwable e) {
+							e.printStackTrace();
+                        }
+                   }
+                case false:
+                    break;
+            }
+        }
+    }
+    
+    private boolean didbypass = false;
+    public void KickBypass(CommandContext ctx) {
+        switch(didbypass) {
+            case false:
+                didbypass = true;
+                Thread t = new Thread(this::BypassVoid);
+                reply("bypass enabled");
+            case true:
+                didbypass = false;
+                reply("bypass disabled");
+        }
     }
     
     public void announce(CommandContext ctx) {
