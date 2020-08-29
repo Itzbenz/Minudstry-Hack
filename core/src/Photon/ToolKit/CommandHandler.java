@@ -75,6 +75,7 @@ public class CommandHandler {
 
         // -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         addCommand("code", this::code);
+	addCommand("makeline", this::MakeLine);
         // todo: add login system https
         addCommand("msg-write", this::writeToAllMessageBlock);
         addCommand("crash", this::crash);
@@ -446,6 +447,30 @@ public class CommandHandler {
             i++;
         }
     }
+	
+    private void MakeLine(CommandContext ctx) {
+        StringBuilder response = new StringBuilder();
+        response.append("a");
+        switch (ctx.args.size()) {
+            case 1:
+                reply("Not enough arguments. Command: /makeline [int]");
+                break;
+            case 2:
+                response.append("a");
+                int args = Integer.parseInt(ctx.args.get(2));
+                if (args >= 1) {
+                    while (args != 0) {
+                        args = args - 1
+                        response.append(System.getProperty("line.seperator"));
+                        if (args == 0) {
+                            response.append("a");
+                            Call.sendChatMessage(response);
+                            break;
+                        }
+                    }
+                }
+        }
+    }
     
     public void announceVoid(String message) {
         call.sendChatMessage(System.getProperty("line.seperator") + "---------------------------" + System.getProperty("line.seperator") + message + System.getProperty("line.seperator") + "---------------------------");
@@ -469,6 +494,7 @@ public class CommandHandler {
         }
     }
     
+    
     private boolean didbypass = false;
     public void KickBypass(CommandContext ctx) {
         switch(didbypass) {
@@ -485,7 +511,7 @@ public class CommandHandler {
     public void announce(CommandContext ctx) {
         switch(ctx.args.size()) {
             case 1:
-                Reply("Not enough arguments. Command: /announce [message]");
+                reply("Not enough arguments. Command: /announce [message]");
                 break;
             case 2:
                 String args = ctx.args.get(2);
