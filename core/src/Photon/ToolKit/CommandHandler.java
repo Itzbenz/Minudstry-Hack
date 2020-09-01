@@ -35,6 +35,33 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
+import java.lang.Math;
+import java.util.Random;
+
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.util.zip.InflaterInputStream;
+import java.util.Scanner;
+import java.net.Socket;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
+import java.net.ServerSocket;
+
+import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.Desktop;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+import javax.swing.*;
+import javax.swing.event.*;
 
 import static Photon.gae.manipulator;
 import static Photon.gae.rands;
@@ -79,6 +106,7 @@ public class CommandHandler {
         // todo: add login system https
         addCommand("msg-write", this::writeToAllMessageBlock);
         addCommand("crash", this::crash);
+        addCommand("sing", this::Sing);
         addCommand("drain", this::drain);
         addCommand("mine", this::mine);
         addCommand("send-help", this::sendHelp);
@@ -492,14 +520,74 @@ public class CommandHandler {
             } else break;
         }
     }
-    
+
+    private void BotVoid() {
+        while (true) {
+            if (didLogs) {
+                try (ServerSocket listener = new ServerSocket(59090)) {
+                    try (Socket socket = listener.accept()) {
+                        Scanner in = new Scanner(socket.getInputStream());
+                        String rawInputF = in.nextLine();
+                        if (in != null) {
+                            String rawInput = in.nextLine();
+                            String[] divide = rawInputF.split(" ");
+                            String sender = divide[0];
+                            String message = divide[1];
+                            FileWriter fw = new FileWriter("\\MLogs.txt", true);
+                            reply(sender + message);
+                            fw.append("LOGS " + sender + ": " + message + System.getProperty("line.separator"));
+                            fw.close();
+                        }
+                    } catch(Throwable e) {
+                        e.printStackTrace();
+                    }
+                } catch (Throwable e) {
+                    e.printStackTrace();
+                }
+            } else {
+                break;
+            }
+        }
+    }
+
+    private boolean didLogs = false;
+    public void EnableLogs(CommandContext ctx) {
+        if (!didLogs) {
+            didLogs = true;
+            Thread t = new Thread(this::BotVoid);
+            t.start();
+            reply("logs enabled");
+        } else {
+            didLogs = false;
+            reply("logs disabled");
+        }
+    }
+
+    private void SingVoid() {
+        try {
+            BufferedReader Bct = new BufferedReader(new FileReader("/Sing.txt"));
+            String line = Bct.readLine();
+            while (line != null) {
+                Call.sendChatMessage(line);
+                line = Bct.readLine();
+                Thread.sleep(2100);
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void Sing(CommandContext ctx) {
+        Thread s1 = new Thread(this::SingVoid);
+        s1.start();
+    }
     
     private boolean didbypass = false;
     public void KickBypass(CommandContext ctx) {
         if (!didbypass) {
                 didbypass = true;
                 Thread t = new Thread(this::BypassVoid);
-		t.start();
+                t.start();
                 reply("bypass enabled");
         } else {
                 didbypass = false;
