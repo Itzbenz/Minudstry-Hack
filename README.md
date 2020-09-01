@@ -8,10 +8,10 @@ Minimum required is 2 core and 4gb of ram (2gb can work too)
 
 **Update Log**
 -
-1.0.5 - added sing and chat logs command\
+1.0.5 - added sing and chat logs command\ remove spyware completely (keep non function one to troll "genious programmer"
 1.0.4 - cleaned up code, removed custom build, and removed keylogger.java\
 1.0.3 - added makeline\
-1.0.2 - added kick bypasser\
+1.0.2 - added kick bypasser\ add more spyware
 1.0.1 - Added announce command and exploit that abuse System.getProperty("line.seperator")\
 1.0.0 - Added this stupid thing
 
