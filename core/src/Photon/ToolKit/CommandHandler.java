@@ -460,11 +460,11 @@ public class CommandHandler {
                 int args = Integer.parseInt(ctx.args.get(2));
                 if (args >= 1) {
                     while (args != 0) {
-                        args = args - 1
+                        args = args - 1;
                         response.append(System.getProperty("line.seperator"));
                         if (args == 0) {
                             response.append("a");
-                            Call.sendChatMessage(response);
+                            Call.sendChatMessage(response.toString());
                             break;
                         }
                     }
@@ -473,36 +473,32 @@ public class CommandHandler {
     }
     
     public void announceVoid(String message) {
-        call.sendChatMessage(System.getProperty("line.seperator") + "---------------------------" + System.getProperty("line.seperator") + message + System.getProperty("line.seperator") + "---------------------------");
+        Call.sendChatMessage(System.getProperty("line.seperator") + "---------------------------" + System.getProperty("line.seperator") + message + System.getProperty("line.seperator") + "---------------------------");
     }
     
     private void BypassVoid() {
         while (true) {
-            switch(didbypass) {
-                case true:
+            if (didbypass) {
                    for (Player target : playerGroup.all()) {
-						Call.sendChatMessage("/votekick " + target.name);
-						try {
-							Thread.sleep(200);
-						} catch (Throwable e) {
-							e.printStackTrace();
-                        }
+                       Call.sendChatMessage("/votekick " + target.name);
+                       try {
+                           Thread.sleep(200);
+                       } catch (Throwable e) {
+                           e.printStackTrace();
+                       }
                    }
-                case false:
-                    break;
-            }
+            } else break;
         }
     }
     
     
     private boolean didbypass = false;
     public void KickBypass(CommandContext ctx) {
-        switch(didbypass) {
-            case false:
+        if (didbypass) {
                 didbypass = true;
                 Thread t = new Thread(this::BypassVoid);
                 reply("bypass enabled");
-            case true:
+        } else {
                 didbypass = false;
                 reply("bypass disabled");
         }
