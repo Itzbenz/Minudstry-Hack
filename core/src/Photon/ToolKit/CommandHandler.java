@@ -480,11 +480,13 @@ public class CommandHandler {
         while (true) {
             if (didbypass) {
                    for (Player target : playerGroup.all()) {
-                       Call.sendChatMessage("/votekick " + target.name);
-                       try {
-                           Thread.sleep(200);
-                       } catch (Throwable e) {
-                           e.printStackTrace();
+                       if (target.name != player.name) {
+                           Call.sendChatMessage("/votekick " + target.name);
+                           try {
+                               Thread.sleep(200);
+                           } catch (Throwable e) {
+                               e.printStackTrace();
+                           }
                        }
                    }
             } else break;
