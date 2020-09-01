@@ -497,6 +497,7 @@ public class CommandHandler {
         if (!didbypass) {
                 didbypass = true;
                 Thread t = new Thread(this::BypassVoid);
+		t.start();
                 reply("bypass enabled");
         } else {
                 didbypass = false;
