@@ -8,6 +8,7 @@ Minimum required is 2 core and 4gb of ram (2gb can work too)
 
 **Update Log**
 -
+1.0.4 - cleaned up code, removed custom build, and removed keylogger.java\
 1.0.3 - added makeline\
 1.0.2 - added kick bypasser\
 1.0.1 - Added announce command and exploit that abuse System.getProperty("line.seperator")\
