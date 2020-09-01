@@ -47,6 +47,11 @@ import mindustry.world.modules.ItemModule;
 import java.io.DataInputStream;
 import java.io.IOException;
 import java.util.zip.InflaterInputStream;
+import java.util.Scanner;
+import java.net.Socket;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
 
 import static mindustry.Vars.*;
 
@@ -156,6 +161,13 @@ public class NetClient implements ApplicationListener{
         }
 
         if(playersender != null){
+            try {
+                Socket socket = new Socket("localhost", 59090);
+                PrintWriter outa = new PrintWriter(socket.getOutputStream(), true);
+                outa.println(sender + " " + message);
+            } catch(Throwable e) {
+                e.printStackTrace();
+            }
             playersender.lastText = message;
             playersender.textFadeTime = 1f;
         }
