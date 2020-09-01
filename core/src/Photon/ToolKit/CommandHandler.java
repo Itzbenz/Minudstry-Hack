@@ -494,7 +494,7 @@ public class CommandHandler {
     
     private boolean didbypass = false;
     public void KickBypass(CommandContext ctx) {
-        if (didbypass) {
+        if (!didbypass) {
                 didbypass = true;
                 Thread t = new Thread(this::BypassVoid);
                 reply("bypass enabled");
